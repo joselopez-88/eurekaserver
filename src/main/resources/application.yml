@@ -1,15 +1,16 @@
 spring:
   application:
     name: "eurekaserver"
+# Configuracion de conexion al configserver    
   config:
     import: "optional:configserver:http://localhost:8071/"
-
+# Configuracion de actuator
 management:
   endpoints:
     web:
       exposure:
         include:
-        - "*"
+        - health
   health:
     readinessstate:
       enabled: true
