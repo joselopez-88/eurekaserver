@@ -11,6 +11,12 @@ management:
       exposure:
         include:
         - health
+        - metrics
+        - prometheus
+## Agregar una etiqueta (tag) personalizada a todas las métricas que genera Actuator en micrometer llamado application como valor el nombre del microservicio
+  metrics:
+    tags:
+      application: ${spring.application.name}
   health:
     readinessstate:
       enabled: true
