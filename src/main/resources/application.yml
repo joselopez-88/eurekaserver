@@ -26,3 +26,12 @@ management:
     health:
       probes:
         enabled: true
+#Estableciendo la configuracion de logging DEBUG en el paquete com.eazybites.eurekaserver del proyecto
+logging:
+  level:
+    com:
+      eazybites:
+        eurekaserver: DEBUG
+# Estableciendo un patron de log personalizado para el microservicio
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"            
